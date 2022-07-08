@@ -1,0 +1,224 @@
+Please provide the following information when you report a crash:
+=================================================================
+
+pool_ip: 
+pool_hostname: eth.2miners.com
+pool_port: 2020
+pool_ssl_port: 0
+pool_http_path: 
+keep_alive: 0
+wallet: *****
+worker_name: *****
+verbose: 1
+algo: ethash
+log: 0
+logfile: 
+ssl: 0
+ssl_verify: 0
+ssl_cert: 
+no_redirect: 0
+retries: 3
+retry_pause: 17
+timeout: 185
+templimit 0: 95
+templimit 1: 95
+templimit 2: 95
+templimit 3: 95
+templimit 4: 95
+templimit 5: 95
+templimit 6: 95
+templimit 7: 95
+templimit 8: 95
+templimit 9: 95
+templimit 10: 95
+templimit 11: 95
+templimit 12: 95
+templimit 13: 95
+templimit 14: 95
+templimit 15: 95
+fan_speed_limit: 0
+cuda_all: 0
+amd_only: 0
+nvidia_only: 0
+cl_all: 0
+auto_detect: 1
+gpu_sleep: 30
+electricity_cost: 0.000000
+electricity_currency: 
+enable_ansi: 1
+enable_stats: 1
+no_cpu: 1
+api: 1
+api_ip: 127.0.0.1
+api_port: 64068
+miner run time: 811
+pool reply time: 60ms
+miner_device_number: 0
+board_name: NVIDIA GeForce RTX 2060 SUPER
+memory: 8 GB
+pcie_id: 1
+cu_device_index: 0
+cu_compute: 7.5
+)cu_compute_major: 7
+cu_compute_minor: 5
+cu_sm_count: 34
+miner_device_number: 1
+board_name: NVIDIA GeForce RTX 2060 SUPER
+memory: 8 GB
+pcie_id: 3
+cu_device_index: 1
+cu_compute: 7.5
+)cu_compute_major: 7
+cu_compute_minor: 5
+cu_sm_count: 34
+miner_device_number: 2
+board_name: NVIDIA GeForce RTX 2060 SUPER
+memory: 8 GB
+pcie_id: 4
+cu_device_index: 2
+cu_compute: 7.5
+)cu_compute_major: 7
+cu_compute_minor: 5
+cu_sm_count: 34
+miner_device_number: 3
+board_name: NVIDIA GeForce RTX 2060 SUPER
+memory: 8 GB
+pcie_id: 5
+cu_device_index: 3
+cu_compute: 7.5
+)cu_compute_major: 7
+cu_compute_minor: 5
+cu_sm_count: 34
+miner_device_number: 4
+board_name: NVIDIA GeForce RTX 2060 SUPER
+memory: 8 GB
+pcie_id: 6
+cu_device_index: 4
+cu_compute: 7.5
+)cu_compute_major: 7
+cu_compute_minor: 5
+cu_sm_count: 34
+miner_device_number: 5
+board_name: NVIDIA GeForce RTX 2060 SUPER
+memory: 8 GB
+pcie_id: 7
+cu_device_index: 5
+cu_compute: 7.5
+)cu_compute_major: 7
+cu_compute_minor: 5
+cu_sm_count: 34
+miner_device_number: 6
+board_name: NVIDIA GeForce RTX 2060 SUPER
+memory: 8 GB
+pcie_id: 8
+cu_device_index: 6
+cu_compute: 7.5
+)cu_compute_major: 7
+cu_compute_minor: 5
+cu_sm_count: 34
+miner_device_number: 7
+board_name: NVIDIA GeForce RTX 2060 SUPER
+memory: 8 GB
+pcie_id: 9
+cu_device_index: 7
+cu_compute: 7.5
+)cu_compute_major: 7
+cu_compute_minor: 5
+cu_sm_count: 34
+board: 2060S
+temp: 55
+fan: 80
+core: 1020
+mem: 7700
+power: 108
+hashrate: 0.00 H/s
+hashrate (avg): 0.00 H/s
+accepted: 250
+rejected: 0
+board: 2060S
+temp: 56
+fan: 80
+core: 1020
+mem: 7700
+power: 105
+hashrate: 0.00 H/s
+hashrate (avg): 0.00 H/s
+accepted: 220
+rejected: 0
+board: 2060S
+temp: 56
+fan: 80
+core: 1020
+mem: 7700
+power: 104
+hashrate: 0.00 H/s
+hashrate (avg): 0.00 H/s
+accepted: 246
+rejected: 0
+board: 2060S
+temp: 53
+fan: 80
+core: 1020
+mem: 7700
+power: 105
+hashrate: 0.00 H/s
+hashrate (avg): 0.00 H/s
+accepted: 237
+rejected: 0
+board: 2060S
+temp: 55
+fan: 80
+core: 1020
+mem: 7700
+power: 104
+hashrate: 0.00 H/s
+hashrate (avg): 0.00 H/s
+accepted: 241
+rejected: 0
+board: 2060S
+temp: 52
+fan: 80
+core: 1020
+mem: 7700
+power: 102
+hashrate: 0.00 H/s
+hashrate (avg): 0.00 H/s
+accepted: 240
+rejected: 0
+board: 2060S
+temp: 50
+fan: 80
+core: 1020
+mem: 7700
+power: 98
+hashrate: 0.00 H/s
+hashrate (avg): 0.00 H/s
+accepted: 209
+rejected: 0
+board: 2060S
+temp: 54
+fan: 80
+core: 1020
+mem: 7700
+power: 98
+hashrate: 0.00 H/s
+hashrate (avg): 0.00 H/s
+accepted: 263
+rejected: 0
+job: 2a175
+bondary: 000000007e00001ef75b06324f6a8168014d8054c386f8c928e8981e0d036f18
+header: 481b1a37bb1b5e4f0417bc2a331eff81be15cd763b90c590f8f6cf5f4172e3fd
+seed: 98d294e667d500ea859a29b1d2ed446aa60daa00f6004971331f511eeb718038
+epoch: 501
+block: -1
+start_nonce: 5368009280848920576
+extranonce_len: 4
+difficulty: 2.031715
+send buffer: ''
+send buffer length: 0
+recv buffer: ''
+recv buffer length: 0
+recv buffer more data flag: -1719054792
+
+=================================================================
+Please provide the above information when you report a crash.

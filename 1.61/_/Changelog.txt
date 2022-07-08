@@ -1,0 +1,223 @@
+v1.26
+1. Added --lhr-unlock option that can give a +20% boost on lhr cards nvidia with lower power. 
+2. Reduced duplicate shares on hiveon pool and possibly other ethereum stratum 1.0 pools.
+3. Faster reconnect to pool if pool does not resolve or is not available.
+4. --xintensity 24 default on ethermine for AMD cards.
+5. Fixed memleak in the dag cache code when mining ETH+ZIL
+
+v1.25
+1. Added stats for Amd cards (Linux).
+2. Fixed issue with connect to pool. (Windows).
+3. Don't add hashrate when validating dag (AMD).
+4. Tiny speedup on NVIDIA cards.
+5. Added a --miningtime option to stop mining after num minutes.
+6. --timeout function now restarts stratum thread after num seconds without data from pool.
+
+v1.24
+1. Fixed issue with multiple set core, mem, power.
+2. Fixed issue with dag cache when switching back from ZIL pow.
+3. Always verify dag on regeneration. Not only on the first run.
+4. Log date time format is now DD:HH:MM.
+5. API bumped to v1.3: Added port, versioning in url and summary.
+
+v1.23
+1. Tiny speedup on Nvidia cards. Faster on lower intensity than before.
+2. More accurate kernel autotune. Now running twice as long as before.
+3. Reduced stales on ethermine.org, flexpool.org, crazypool and nicehash on amd (default --xintensity 24)
+4. Console stats are rewritten to work with all terminals.
+5. Fixed zil mining at rustpool.
+6. Fix index problem in set memclock / coreclock / powerlimit (Nvidia).
+7. Added --tweak parameter for Nvidia 0-7.
+8. Added more pools.
+
+v1.22
+1. Uptime error in day is corrected.
+2. Added --dagintensity support for AMD cards.
+3. Fixed a print bug for cuda showing 0gb memory for cards.
+4. Fixed --cl-devices [] for multicard rigs AMD/NVIDIA.
+5. Fixed index bug in stats when using --cu-devices.
+6. Added more pools.
+
+v1.21
+1. Fixed short option for --api (enable api).
+2. Miner uptime is now DD:HH:MM.
+3. Trying to solve the ansi output bug in some terminals.
+4. Fix overflow bug in average solution time output to the console.
+5. SSL is not working 100% so we have disabled it for now.
+6. Reset gpu-memclock has been disabled on dag generation. Use the --dagintensity option instead
+
+v1.20
+1. Removed unwanted debug output for AMD/OpenCL. (Linux)
+2. Removed cost from console status if watt reading is null.
+3. Added mutex lock to average solution time to avoid thread race condition.
+4. Avoid gpu timouts at startup on rigs with more than 12 cards.
+5. Improved staleshare checker less stales reported.
+6. Increased default nvidia --xintensity to 225 to improve the poolsite hashrate.
+7. Added --dagintensity 0-9 setting for nvidia cards to prevent crash on high oc RTX cards.
+8. Fixed reported hashrate on some pools with high case workernames.
+9. Added following pools: 666pool.cn, gpumine.org and rustpool.xyz.
+
+v1.19
+1. Fixed NVIDIA stats on linux.
+2. Core clock and mem clock are reset while generating the dag file.
+3. Pool hashrate disabled for Vardiff pools.
+4. Fixed slow nvidia speed with the cuda 11_2 build
+5. Reduced stale shares nvidia with --xintensity 160
+6. Added a 9th nvidia cuda kernel that can give a small speedup.
+7. Fixed a bug in the Autotune. The kernel selector should be more accurate now
+8. Removed crashed opencl cards from the hashrate statistics
+
+v1.18
+1. Added poolside hashrate calculated from the time, accepted shares, difficulty. 
+2. Added xintensity and kernel in the stats.
+3. Added shares per minute to stats.
+4. Remove crash in dag generation on high clocks.
+5. Fix submit hashrate at ethermine.
+6. Fix average hashrate/W calculation in stats.
+7. Added kucoin pool.
+
+v1.17
+1. Fixed --xintensity -1 (dynamic) on AMD cards
+2. Don't add hashrate to average hashrate when validating the dag file.
+3. API bumped to v1.2. Added DAG generation to "threads" API call.
+4. Core/mem clocks and powerlimit are set after DAG generation.
+5. Added a few seconds of mining at startup. (while checking the dag buffer)
+6. Reduce the stales on xintensity -1 (AMD)
+
+v1.16
+1. Added new and faster nvidia CUDA kernels. Improved perforamance with auto-tune to find the best option for each card. 
+2. Changed commandline long options use of underscore. Replaced with dash. See --help.
+3. Added --kernel option. (NVIDIA) 8 different kernels to choose from. Without this set, autotune is enabled.
+4. Added --lock-mclock option. Specifies minimum and maximum memory clocks per GPU. (run as admin)
+5. Added --power-limit option. Specifies maximum power limit in watts per GPU. (run as admin)
+6. --xintensity reduced to 192 to remove stales from pools.
+7. Fixed a bug in average hashrate and xintensity -1 on amd cards.
+
+v1.15
+1. API is bumped to v1.1. Added xintensity to threads call.
+2. One set of shares stats per algorithm. If mining eth+zil zil will have own stats.
+3. Fixed gpu order bug in the stats
+5. Fixed gpu order bug in average hashrate
+6. Fixed slow start and 0 in averagehashrate. Now with more samples to avoid fluctation
+7. Fixed 0 bug in submit hashrate on ethermine
+8. Added support more AMD devices in stats
+9. xintensity reduced 400 on nvidia, amd dynamic intensity start lower to avoid crash on some config.
+10. Added option to lock clocks --lock-cclock . (you need to run the program as admin) 
+ 
+v1.14
+1. Added gpu watchdog, Automatic restart miner on crash.
+2. Fixed amd-only option if nvidia drivers where installed but no nvidia gpus enabled.
+3. Faster NVIDIA. Increased the default xintensity. Decrease the --xintensity on pools that doesn't pay for stale shares.
+3. Faster AMD. Improved the dynamic xintensity.
+4. Force the average hashrate to display at startup even if it has few samples.
+
+v1.13
+1. Removed overflow in submit every x seconds.
+2. Fixed Titan Xp boardname in the stats/api.
+3. Added exception handling to fix crash on amd stats.
+4. Reduced dag generation times on multicoin pools (zergpool)
+5. API now return average hashrates instead of samples
+
+v1.12
+1. Bugfix for null pointer and empty buffer with Zil mining.
+2. One letter or two letter board mark added to stats board number.
+3. Do not query OpenCL version on systems with no OpenCL devices.
+4. Added new option --nvidia-only.
+5. XIntesity option for every devices.
+6. Restore performance opencl
+7. Default XIntesity changed to 224 (improves performance on some pools)
+
+v1.11
+1. Added http header to the api
+2. Try to fix crash on startup on some rigs
+3. Static linking of cudalibrary in the linux build.
+4. Try to fix submit hashrate bug on ethermine for some rigs.
+5. Improved performance nvidia (default --xintensity 256)
+6. Fixed bug in api pcieid
+
+v1.10
+1. Added an API
+2. Improved stale shares on dynamic/default intensity.
+3. Fixed crash in gpu loop.
+4. Removed sudden exit crash in mining loop.
+5. Lower cpu usage on cuda
+
+v1.09
+1. Fixed submit hashrate on ethermine (opencl)
+2. Fixed duplicate share issue at woolypooly
+3. Added support for more devices in amd stats
+4. Fixed stratum disconnects every ~30 minutes at 2miners
+
+v1.08
+1. Fixed submit hashrate on ethermine
+2. Added more pools
+3. Improved Dag creation (cuda)
+4. Added support for more devices in amd stats
+5. Fixed bug in average submitted time in the console
+
+v1.07
+1. Fixed submit hashrate when gpu0 was not active
+2. Don't submit hashrate to pools that don't support it.
+3. Fixed 30min disconnects on some pools
+4. Fixed amd stats again.
+5. Fixed mixed rigs. CUDA/AMD
+6. Improved stale share estimated
+
+v1.06
+1. Fixed amd stats
+2. Fixed bug in --list-devices on rigs without cuda
+3. Added support for more pools
+4. Removed nvidia_smi error message on rigs without cuda
+5. More stable dag creation on higher clocks. 
+
+v1.05
+1. Fixed bugs in short options
+3. Fixed cuda stats for -U [x,x]
+2. Fixed indexproblem/crash at startup in mixed AMD/NVIDIA rigs.
+4. Fixed ethereum classic cuda mining on miningpoolhub
+5. Reduced stales cuda/opencl
+6. Stats for AMD including temp control
+7. Fixed calculation error in consumption
+8. Fixed error in share submit time 
+
+v1.04
+1. Fixed bug when submitting shares in stratum 1.0 sometimes the workername was lost
+2. Fixed stats printout if the poolname is too long
+3. Added more pools
+4. Cpu rejected opencl shares now added to the stats
+5. Faster opencl kernel
+6. Fixed ethereum classic opencl mining on miningpoolhub
+
+v1.03
+1. CPU verification of the Dag buffer (opencl/cuda)
+2. Improved the stale share counter with a better estimation
+3. Stale counter added to the opencl solver
+4. Bumped the default xintensity to 64 (cuda)
+5. Improved cuda 11.4 kernel tuning. abit faster
+6. Improved DAG generation to be nicer to high oc.
+7. Improved 11.4 kernel to accept higher oc.
+8. Nicer on the dag generator to accept higher oc. (cuda)
+
+v1.02
+1. Added stale share check on the submitted shares and display the count.
+2. Added --xintensity parameter. To finetune the buffer size sent to the gpu. (NVIDIA/AMD)
+3. Fixed memory problem on startup
+4. Added support for more pools
+5. Fixed crash in the opencl mining. Cards stopped working.
+6. Print pool difficulty changes to console
+7. Fixed bug in list opencl devices
+8. Added gpu memory temp to stats
+
+v1.01
+1. Faster Nvidia kernel
+2. Removed stale shares on some pools. (ethproxy/nicehash)
+4. Fixed missing stats when you have unused cards in the rig.
+5. Fixed crash in zil standalone mining
+6. Fixed cpu rejected shares upon zil switch.
+7. Fixed disconnect bug in zil dual mining mode.
+8. Fixed rare sudden exit crash
+9. Added amd-only option. Only use amd cl-devices
+10. Added --no-cpu option for cuda to remove cpu usage. hashrate -1-2%
+11. Fixed dublicate share bug on some pools
+13. Fixed crash in stats when using -Y or -U to manually specifying gpu list
+14. Added more pools
